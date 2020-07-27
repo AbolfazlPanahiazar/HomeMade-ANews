@@ -4,7 +4,8 @@
   justify-content: center;
 
   &__wrapper {
-    box-shadow: 1px 1px 10px #ccc;
+    box-shadow: 1.5px 1.5px 12px rgba(126, 125, 125, 0.575);
+    border-radius: 0.3rem;
     padding: 1rem;
     min-height: 38rem;
     display: flex;

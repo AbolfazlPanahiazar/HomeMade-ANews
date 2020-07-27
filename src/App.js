@@ -1,13 +1,12 @@
 import React from "react";
 import Table from "./Components/Table/Table";
+import Header from "./Components/Header/Header";
 import "./App.css";
 
 function App() {
   return (
     <div className="container App">
-      <header>
-        <h1>Abolfazl News</h1>
-      </header>
+      <Header />
       <Table />
     </div>
   );
