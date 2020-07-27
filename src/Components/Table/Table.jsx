@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Card from "../Card/Card";
+import "./Table.scss";
 
 const apiKey = "0ef3a256fe244c768ab57b56f71a4952";
 
@@ -20,9 +22,10 @@ function Table() {
   }, []);
 
   return (
-    <div>
-      Table
-      {console.log(news)}
+    <div className="row Table">
+      {news.map((item, index) => (
+        <Card key={index} news={item} />
+      ))}
     </div>
   );
 }
