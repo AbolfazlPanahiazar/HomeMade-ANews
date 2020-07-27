@@ -1,30 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import Card from "../Card/Card";
 import "./Table.scss";
-
-const apiKey = "0ef3a256fe244c768ab57b56f71a4952";
+import NewsContext from "../../Context/NewsContext";
 
 function Table() {
-  const [news, setNews] = useState([]);
-  const [country, setCountry] = useState("us");
-
-  //ComponentDidMount
-  useEffect(() => {
-    const req = new Request(`http://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`);
-    fetch(req)
-      .then((response) => response.json())
-      .then((response) => {
-        setNews(response.articles);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const { news, setNews } = useContext(NewsContext);
 
   return (
     <div className="row Table">
       {news.map((item, index) => (
-        <Card key={index} news={item} />
+        <Card key={index} news={item} index={index} />
       ))}
     </div>
   );

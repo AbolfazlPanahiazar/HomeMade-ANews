@@ -2,6 +2,7 @@
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: center;
+  color: #ccc;
 
   &__wrapper {
     box-shadow: 1.5px 1.5px 12px rgba(126, 125, 125, 0.575);
@@ -11,6 +12,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__image {
